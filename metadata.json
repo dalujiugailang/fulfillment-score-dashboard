@@ -1,0 +1,6 @@
+{
+  "name": "服务商综合考核看板",
+  "description": "用于管理服务商三家在固定考核周期（2026/05/01 - 2026/07/31）内指标表现的双周更新运营考核看板，支持数据在线上传、排名展示、流量分配及规则说明。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

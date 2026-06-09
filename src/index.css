@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "SF Pro Text", "SF Pro Display", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "SF Mono", "Roboto Mono", "Menlo", "Consolas", monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    letter-spacing: 0;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+    letter-spacing: 0;
+  }
+}
+
+@layer components {
+  .command-center {
+    --cc-bg: #f6f7f9;
+    --cc-fg: #1f2937;
+    --cc-muted: #4b5563;
+    --cc-surface: #ffffff;
+    --cc-surface-soft: #f3f4f6;
+    --cc-border: #e5e7eb;
+    --cc-border-strong: #d1d5dc;
+    --cc-primary: #c2410c;
+    --cc-primary-strong: #9a3412;
+    --cc-primary-soft: rgba(194, 65, 12, 0.12);
+    --cc-shell: rgba(0, 0, 0, 0.7);
+    color: var(--cc-fg);
+    background: var(--cc-bg);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .command-center main {
+    line-height: 1.62;
+  }
+
+  .command-center [class*="text-[11px]"] {
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+  }
+
+  .command-center [class~="text-xs"] {
+    font-size: 13px !important;
+    line-height: 1.55 !important;
+  }
+
+  .command-center [class*="text-[13px]"] {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+  }
+
+  .command-center [class~="text-sm"] {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+  }
+
+  .command-center table th,
+  .command-center table td {
+    padding-top: 0.95rem !important;
+    padding-bottom: 0.95rem !important;
+    vertical-align: middle;
+  }
+
+  .command-center table {
+    line-height: 1.55;
+  }
+
+  .command-center .cc-shell {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.72), rgba(65, 56, 48, 0.94));
+    color: #fff;
+    backdrop-filter: blur(12px);
+  }
+
+  .command-center .cc-panel {
+    background: var(--cc-surface);
+    border: 1px solid var(--cc-border);
+    border-radius: 10px;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  }
+
+  .command-center .cc-title {
+    color: #111827;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .command-center .cc-kicker {
+    color: #6b7280;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .command-center .cc-primary-button {
+    background: var(--cc-primary);
+    color: #fff;
+    border: 1px solid var(--cc-primary-strong);
+    border-radius: 6px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    transition: background 150ms ease, transform 150ms ease;
+  }
+
+  .command-center .cc-primary-button:hover {
+    background: var(--cc-primary-strong);
+    transform: translateY(-1px);
+  }
+
+  .command-center .cc-secondary-button {
+    background: #f3f4f6;
+    color: #374151;
+    border: 1px solid var(--cc-border);
+    border-radius: 6px;
+    font-weight: 800;
+  }
+
+  .command-center .cc-nav-item {
+    color: rgba(255, 255, 255, 0.68);
+    border-radius: 0;
+  }
+
+  .command-center .cc-nav-item:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .command-center .cc-nav-active {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    border-left: 3px solid var(--cc-primary);
+  }
+
+  .command-center .cc-nav-active svg,
+  .command-center .cc-nav-item:hover svg {
+    color: var(--cc-primary);
+  }
+
+  .command-center main [class*="bg-white"] {
+    background-color: var(--cc-surface) !important;
+  }
+
+  .command-center main [class*="bg-slate-50"] {
+    background-color: #f6f7f9 !important;
+  }
+
+  .command-center main [class*="border-slate"] {
+    border-color: var(--cc-border) !important;
+  }
+
+  .command-center main [class*="text-slate-900"],
+  .command-center main [class*="text-slate-800"],
+  .command-center main [class*="text-slate-700"] {
+    color: var(--cc-fg) !important;
+  }
+
+  .command-center main [class*="text-slate-500"],
+  .command-center main [class*="text-slate-400"] {
+    color: var(--cc-muted) !important;
+  }
+
+  .command-center main [class*="text-blue"] {
+    color: var(--cc-primary) !important;
+  }
+
+  .command-center main [class~="bg-blue-600"],
+  .command-center main [class~="bg-blue-700"],
+  .command-center main [class~="bg-blue-800"] {
+    background-color: var(--cc-primary) !important;
+  }
+
+  .command-center main [class*="border-blue"] {
+    border-color: rgba(194, 65, 12, 0.35) !important;
+  }
+
+  .command-center table thead tr {
+    background: rgba(254, 110, 0, 0.055) !important;
+  }
+
+  .command-center table tbody tr:hover {
+    background: rgba(254, 110, 0, 0.045) !important;
+  }
+
+  .command-center select,
+  .command-center input {
+    background-color: #fffaf6;
+    border-color: var(--cc-border);
+    color: var(--cc-fg);
+  }
+}

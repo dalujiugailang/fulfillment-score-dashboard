@@ -1,0 +1,22 @@
+services:
+  fulfillment-score-dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fulfillment-score-dashboard:latest
+    container_name: fulfillment-score-dashboard
+    restart: unless-stopped
+    environment:
+      ADMIN_PASSWORD: "${ADMIN_PASSWORD}"
+      QINGYANG_PASSWORD: "${QINGYANG_PASSWORD}"
+      HAIJING_PASSWORD: "${HAIJING_PASSWORD}"
+      XIAOZHI_PASSWORD: "${XIAOZHI_PASSWORD}"
+      SESSION_TTL_MS: "${SESSION_TTL_MS:-28800000}"
+      DATA_DIR: "/app/data"
+    volumes:
+      - fulfillment-score-data:/app/data
+    ports:
+      - "${APP_PORT:-6001}:3000"
+
+volumes:
+  fulfillment-score-data:
